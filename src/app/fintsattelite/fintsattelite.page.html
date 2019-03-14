@@ -1,0 +1,29 @@
+<ion-content  class="fintsatt">
+  <div class="container">
+    <div class="col title">
+      <h1>Finding Your Sattelite</h1>
+    </div>
+    <div class="col pagebody">
+      <div class="pagebody-text" *ngIf="matchedSatt.satNum==0">We have lots of sattelites. We’re looking for a good match...</div>
+      <div class="pagebody-text" *ngIf="matchedSatt.satNum>0">
+          We’ve found the best satellite for you at your current location. Say ‘hello’ to your new best friend, {{matchedSatt.satName}}.
+      </div>
+      <div class="pagebody-img col">
+        <div class="col pagebody-img__sat">
+          <img src="./assets/img/satellite.svg" class="sat1" [ngClass]="{'selected': matchedSatt.satNum==1,  'unselected':matchedSatt.satNum>0 && matchedSatt.satNum!==1}" alt="" >
+          <img src="./assets/img/satellite.svg" class="sat2" alt="" [ngClass]="{'selected': matchedSatt.satNum==2, 'unselected':matchedSatt.satNum>0 && matchedSatt.satNum!==2}">
+        </div>
+        <div class="col pagebody-img__world">
+          <img src="./assets/img/world.svg" alt="">
+        </div>
+        <div class="col pagebody-img__sat">
+          <img src="./assets/img/satellite.svg" class="sat3" alt="" [ngClass]="{'selected': matchedSatt.satNum==3, 'unselected':matchedSatt.satNum>0 && matchedSatt.satNum!==3}">
+          <img src="./assets/img/satellite.svg" class="sat4" alt="" [ngClass]="{'selected': matchedSatt.satNum==4, 'unselected':matchedSatt.satNum>0 && matchedSatt.satNum!==4}">
+        </div>
+      </div>
+    </div>
+    <div class="col footer">
+      <button (click)="findNorth()" [hidden]="matchedSatt.satNum==0">Next</button>
+    </div>
+  </div>
+</ion-content>

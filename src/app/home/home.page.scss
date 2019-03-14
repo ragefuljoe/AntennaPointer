@@ -1,1 +1,49 @@
+:host{
+    ion-content{
+        --background: none;
+        background-image: radial-gradient(circle, #91b6e0, #80ade1, #6fa3e1, #5d9ae2, #4a90e2);
+        font-family: var(--ion-font-family) !important;
 
+    }
+
+    .container{
+        height: 100vh;
+        display: flex;
+        color:var(--ct-grey);
+
+        flex-direction: column;
+    }
+    .title{
+        padding: 3em;
+        text-align: center;
+        flex-grow: 0;
+        
+        h1{
+            font-weight: 100;
+        }
+    }
+    .pagebody{
+        font-size: 32px;
+        display: flex;
+        align-items: center;
+        text-align: center;
+        div{
+            margin-top: -50px;
+        }
+    }
+    .footer{
+        text-align: right;
+        align-self: flex-end;
+        padding: 2em;
+        flex-grow: 0;
+        button{
+            background-color: var(--ct-purple);
+            font-size: 24px;
+            padding: 0.3em 1em;
+            color: white;
+            font-weight: 300;
+            border-radius: 50px;
+            box-shadow: 3px 4px 5px -1px rgba(0,0,0,0.42);
+        }
+    }
+}

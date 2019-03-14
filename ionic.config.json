@@ -1,5 +1,7 @@
 {
   "name": "AntennaPointer",
-  "integrations": {},
+  "integrations": {
+    "cordova": {}
+  },
   "type": "angular"
 }

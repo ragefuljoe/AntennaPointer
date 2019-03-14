@@ -1,0 +1,108 @@
+:host{
+    ion-content{
+        --background: none;
+        background-image: radial-gradient(circle, #91b6e0, #80ade1, #6fa3e1, #5d9ae2, #4a90e2);
+        font-family: var(--ion-font-family) !important;
+    }
+
+    .container{
+        height: 100vh;
+        display: flex;
+        color:var(--ct-grey);
+
+        flex-direction: column;
+    }
+    .title{
+        padding: 3em;
+        padding-bottom: 2em;
+        text-align: center;
+        flex-grow: 0;
+        
+        h1{
+            font-weight: 100;
+        }
+    }
+    .pagebody{
+        font-size: 32px;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        text-align: center;
+        .pagebody-text{
+            font-size: 28px;
+            .highlight{
+                color: var(--ct-purple);
+            }
+        }
+        .pagebody-img{
+            padding: 20px;
+            .clock-wrap{
+                position: relative;
+                height: 160px;
+                display: flex;
+            }
+            .clock{
+                position: absolute;
+                left: 50%;
+                transform: translateX(-50%);
+            }
+            .clock-face{
+                height: 160px;
+                top:0;
+                &.gettingClose{
+                    filter: invert(0.5) sepia(98) saturate(53) hue-rotate(272deg);
+                }
+                &.spotOn{
+                    filter: invert(0.5) sepia(97) saturate(84) hue-rotate(269deg);
+                }
+            }
+            .clock-spoke{
+                height: 30px;
+                top: 65px;
+                z-index: 2;
+                &.gettingClose{
+                    filter: invert(0.5) sepia(98) saturate(53) hue-rotate(272deg);
+                }
+                &.spotOn{
+                    filter: invert(0.5) sepia(97) saturate(84) hue-rotate(269deg);
+                }
+            }
+            .clock-hour{
+                height: 37px;
+                top: 38px;
+                transform: rotate(225deg);
+                transform-origin: 50% 42px;
+                margin-left: -5px;
+            }
+            .clock-minute{
+                height: 48px;
+                top: 20px;
+            }
+            .perfect{
+                margin-top: auto;
+                margin-bottom: auto;
+                margin-left: auto;
+                margin-right: auto;
+                padding-top: 71px;
+                font-size: 26px;
+                color: var(--ct-purple);
+            }
+        }
+    }
+    .footer{
+        text-align: right;
+        align-self: flex-end;
+        padding: 2em;
+        flex-grow: 0;
+        button{
+            background-color: var(--ct-purple);
+            font-size: 24px;
+            padding: 0.3em 1em;
+            color: white;
+            font-weight: 300;
+            border-radius: 50px;
+            box-shadow: 3px 4px 5px -1px rgba(0,0,0,0.42);
+        }
+       
+    }
+}

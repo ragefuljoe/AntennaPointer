@@ -1,0 +1,28 @@
+<ion-content  class="pointNorthStart">
+    <div class="container">
+      <div class="col title">
+        <h1>Pointing in the right direction</h1>
+      </div>
+      <div class="col pagebody">
+        <div class="pagebody-text col" >The minute hand is where you’re pointing</div>
+        <div class="pagebody-img col">
+          <div class="clock-wrap">
+            <img src="./assets/img/clock face.svg" class="clock clock-face" alt="" [ngClass]="{'gettingClose': gettingClose(), 'spotOn':spotOn()}">
+            <img src="./assets/img/clock spoke.svg" class="clock clock-spoke" alt="" [ngClass]="{'gettingClose': gettingClose(), 'spotOn':spotOn()}">
+            <img src="./assets/img/minute hand.svg" class="clock clock-minute" alt="">
+            <img src="./assets/img/hour hand.svg" class="clock clock-hour" alt="" [ngStyle]="{ 'transform': 'rotate('+orientation.magneticHeading+'deg)'}">
+            <div class="perfect" *ngIf="spotOn()">Perfect!</div>
+          </div>
+        </div>
+        <div class="pagebody-text col">
+          <!-- <div style="font-size:11px;">
+            {{orientation|json}}
+          </div> -->
+            The <span class="highlight">hour hand</span> is <div>{{satName}}</div>
+        </div>
+      </div>
+      <div class="col footer">
+        <button (click)="findHeight()" [disabled]="!spotOn()">Next</button>
+      </div>
+    </div>
+  </ion-content>

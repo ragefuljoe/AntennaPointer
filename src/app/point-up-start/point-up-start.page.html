@@ -1,0 +1,22 @@
+<ion-content class="pointUpStart">
+  <div class="container">
+    <div class="col title">
+      <h1>Pointing up</h1>
+      <div>
+        <!-- {{orientation | json}} -->
+      </div>
+    </div>
+    <div class="col pagebody">
+      <div class="mustache" [ngStyle]="{ 'bottom': orientation+'%'}" [ngClass]="{'gettingClose': gettingClose(), 'spotOn':spotOn()}">
+        <img src="./assets/img/mustache.svg" alt="">
+      </div>
+    </div>
+    <div class="spoton">
+      <img src="./assets/img/100.png" alt="" *ngIf="spotOn()">
+    </div>
+    <div class="col footer">
+      <!-- <button (click)="getCurrGyro()">Gyro</button> -->
+      <button (click)="goToEnd()" [disabled]="!spotOn()">Next</button>
+    </div>
+  </div>
+</ion-content>
